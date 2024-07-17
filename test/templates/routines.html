@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit.T</title>
+    <link rel="stylesheet" href="{{ url_for('serve_css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Get Fit</h1>
+    </header>
+    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    
+    <div class="content">
+    <h1>Workout Routines</h1>
+
+        <!-- BMI Case 1 -->
+        <div class="bmi-case">
+            <h2>BMI Case 1</h2>
+            <div class="day">
+                <h3>Monday</h3>
+                <pre>Cardio: 30 min running
+    Warm-up: 5 min light jogging
+    Main Workout: 30 min running (moderate pace)
+    Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Tuesday</h3>
+                <pre>Strength: Upper Body</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Push-ups</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Dumbbell Bench Press</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Bicep Curls</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Tricep Dips</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Plank</td>
+                            <td>3</td>
+                            <td>30 seconds</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (chest, shoulders, arms)</pre>
+            </div>
+            <div class="day">
+                <h3>Wednesday</h3>
+                <pre>Cardio: 30 min cycling
+    Warm-up: 5 min light cycling
+    Main Workout: 30 min moderate-intensity cycling
+    Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Thursday</h3>
+                <pre>Strength: Lower Body</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Bodyweight Squats</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Lunges</td>
+                            <td>3</td>
+                            <td>12 per leg</td>
+                        </tr>
+                        <tr>
+                            <td>Leg Press</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Calf Raises</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Glute Bridges</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (quads, hamstrings, glutes)</pre>
+            </div>
+            <div class="day">
+                <h3>Friday</h3>
+                <pre>Rest Day</pre>
+            </div>
+        </div>
+    
+        <!-- BMI Case 2 -->
+        <div class="bmi-case">
+            <h2>BMI Case 2</h2>
+            <div class="day">
+                <h3>Monday</h3>
+                <pre>Cardio: 30 min jogging
+    Warm-up: 5 min light jogging
+    Main Workout: 30 min jogging (steady pace)
+    Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Tuesday</h3>
+                <pre>Strength: Full Body Workout</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Burpees</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Dumbbell Rows</td>
+                            <td>3</td>
+                            <td>12 per arm</td>
+                        </tr>
+                        <tr>
+                            <td>Squats</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Push-ups</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Mountain Climbers</td>
+                            <td>3</td>
+                            <td>20 per leg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (full body)</pre>
+            </div>
+            <div class="day">
+                <h3>Wednesday</h3>
+                <pre>Cardio: 30 min swimming
+    Warm-up: 5 min light swimming
+    Main Workout: 30 min moderate-intensity swimming
+    Cool-down: 5 min stretching (shoulders, legs)</pre>
+            </div>
+            <div class="day">
+                <h3>Thursday</h3>
+                <pre>Strength: Core Workout</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Crunches</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Russian Twists</td>
+                            <td>3</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Leg Raises</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Plank</td>
+                            <td>3</td>
+                            <td>45 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>Flutter Kicks</td>
+                            <td>3</td>
+                            <td>30 seconds</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (abs, lower back)</pre>
+            </div>
+            <div class="day">
+                <h3>Friday</h3>
+                <pre>Rest Day</pre>
+            </div>
+        </div>
+    
+        <!-- BMI Case 3 -->
+        <div class="bmi-case">
+            <h2>BMI Case 3</h2>
+            <div class="day">
+                <h3>Monday</h3>
+                <pre>Cardio: 30 min brisk walking
+    Warm-up: 5 min light walking
+    Main Workout: 30 min brisk walking
+    Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Tuesday</h3>
+                <pre>Strength: Upper Body</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dumbbell Shoulder Press</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Lat Pulldowns</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Chest Flyes</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Tricep Extensions</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Bicep Curls</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (shoulders, arms, chest)</pre>
+            </div>
+            <div class="day">
+                <h3>Wednesday</h3>
+                <pre>Cardio: 30 min elliptical
+    Warm-up: 5 min light elliptical
+    Main Workout: 30 min moderate-intensity elliptical
+    Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Thursday</h3>
+                <pre>Strength: Lower Body</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Deadlifts</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Step-Ups</td>
+                            <td>3</td>
+                            <td>12 per leg</td>
+                        </tr>
+                        <tr>
+                            <td>Leg Extensions</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Hamstring Curls</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Seated Calf Raises</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Friday</h3>
+                <pre>Rest Day</pre>
+            </div>
+        </div>
+
+    
+        <!-- BMI Case 4 -->
+        <div class="bmi-case">
+            <h2>BMI Case 4</h2>
+            <div class="day">
+                <h3>Monday</h3>
+                <pre>Cardio: 30 min running
+    Warm-up: 5 min light jogging
+    Main Workout: 30 min running (moderate pace)
+    Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+            </div>
+            <div class="day">
+                <h3>Tuesday</h3>
+                <pre>Strength: Full Body Workout
+    Warm-up: 5 min light cardio</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Burpees</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Dumbbell Rows</td>
+                            <td>3</td>
+                            <td>12 per arm</td>
+                        </tr>
+                        <tr>
+                            <td>Squats</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Push-ups</td>
+                            <td>3</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Mountain Climbers</td>
+                            <td>3</td>
+                            <td>20 per leg</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (full body)</pre>
+            </div>
+            <div class="day">
+                <h3>Wednesday</h3>
+                <pre>Cardio: 30 min swimming
+    Warm-up: 5 min light swimming
+    Main Workout: 30 min moderate-intensity swimming
+    Cool-down: 5 min stretching (shoulders, legs)</pre>
+            </div>
+            <div class="day">
+                <h3>Thursday</h3>
+                <pre>Strength: Core Workout
+    Warm-up: 5 min light cardio</pre>
+                <table class="exercise-table">
+                    <thead>
+                        <tr>
+                            <th>Exercise</th>
+                            <th>Sets</th>
+                            <th>Reps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Crunches</td>
+                            <td>3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>Russian Twists</td>
+                            <td>3</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Leg Raises</td>
+                            <td>3</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Plank</td>
+                            <td>3</td>
+                            <td>45 seconds</td>
+                        </tr>
+                        <tr>
+                            <td>Flutter Kicks</td>
+                            <td>3</td>
+                            <td>30 seconds</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pre>Cool-down: 5 min stretching (abs, lower back)</pre>
+            </div>
+            <div class="day">
+                <h3>Friday</h3>
+                <pre>Rest Day</pre>
+            </div>
+        </div>
+    
+        <!-- Add more BMI Cases as needed -->
+    
+    </body>
+    </html>
+    
+    <!-- BMI Case 5 -->
+<div class="bmi-case">
+    <h2>BMI Case 5</h2>
+    <div class="day">
+        <h3>Monday</h3>
+        <pre>Cardio: 30 min cycling
+Warm-up: 5 min light cycling
+Main Workout: 30 min moderate-intensity cycling
+Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+    </div>
+    <div class="day">
+        <h3>Tuesday</h3>
+        <pre>Strength: Upper Body</pre>
+        <table class="exercise-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Incline Dumbbell Press</td>
+                    <td>3</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Seated Row</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Overhead Press</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Lat Pulldown</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Tricep Extensions</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre>Cool-down: 5 min stretching (arms, shoulders, back)</pre>
+    </div>
+    <div class="day">
+        <h3>Wednesday</h3>
+        <pre>Cardio: 30 min brisk walking
+Warm-up: 5 min light walking
+Main Workout: 30 min brisk walking
+Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+    </div>
+    <div class="day">
+        <h3>Thursday</h3>
+        <pre>Strength: Lower Body</pre>
+        <table class="exercise-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Leg Press</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Lunges</td>
+                    <td>3</td>
+                    <td>12 per leg</td>
+                </tr>
+                <tr>
+                    <td>Leg Curls</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Calf Raises</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Hip Thrusts</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre>Cool-down: 5 min stretching (legs, glutes)</pre>
+    </div>
+    <div class="day">
+        <h3>Friday</h3>
+        <pre>Rest Day</pre>
+    </div>
+</div>
+
+<!-- BMI Case 6 -->
+<div class="bmi-case">
+    <h2>BMI Case 6</h2>
+    <div class="day">
+        <h3>Monday</h3>
+        <pre>Cardio: 30 min jogging
+Warm-up: 5 min light jogging
+Main Workout: 30 min jogging (steady pace)
+Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+    </div>
+    <div class="day">
+        <h3>Tuesday</h3>
+        <pre>Strength: Full Body Workout</pre>
+        <table class="exercise-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Burpees</td>
+                    <td>3</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Rows</td>
+                    <td>3</td>
+                    <td>12 per arm</td>
+                </tr>
+                <tr>
+                    <td>Squats</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Push-ups</td>
+                    <td>3</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Mountain Climbers</td>
+                    <td>3</td>
+                    <td>20 per leg</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre>Cool-down: 5 min stretching (full body)</pre>
+    </div>
+    <div class="day">
+        <h3>Wednesday</h3>
+        <pre>Cardio: 30 min swimming
+Warm-up: 5 min light swimming
+Main Workout: 30 min moderate-intensity swimming
+Cool-down: 5 min stretching (shoulders, legs)</pre>
+    </div>
+    <div class="day">
+        <h3>Thursday</h3>
+        <pre>Strength: Core Workout</pre>
+        <table class="exercise-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Crunches</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Russian Twists</td>
+                    <td>3</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Leg Raises</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Plank</td>
+                    <td>3</td>
+                    <td>45 seconds</td>
+                </tr>
+                <tr>
+                    <td>Flutter Kicks</td>
+                    <td>3</td>
+                    <td>30 seconds</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre>Cool-down: 5 min stretching (abs, lower back)</pre>
+    </div>
+    <div class="day">
+        <h3>Friday</h3>
+        <pre>Rest Day</pre>
+    </div>
+</div>
+
+<!-- BMI Case 7 -->
+<div class="bmi-case">
+    <h2>BMI Case 7</h2>
+    <div class="day">
+        <h3>Monday</h3>
+        <pre>Cardio: 30 min running
+Warm-up: 5 min light jogging
+Main Workout: 30 min running (moderate pace)
+Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+    </div>
+    <div class="day">
+        <h3>Tuesday</h3>
+        <pre>Strength: Upper Body</pre>
+        <table class="exercise-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bench Press</td>
+                    <td>3</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Dumbbell Flyes</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Overhead Press</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Bicep Curls</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Tricep Dips</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre>Cool-down: 5 min stretching (arms, shoulders, chest)</pre>
+    </div>
+    <div class="day">
+        <h3>Wednesday</h3>
+        <pre>Cardio: 30 min elliptical
+Warm-up: 5 min light elliptical
+Main Workout: 30 min moderate-intensity elliptical
+Cool-down: 5 min stretching (quads, hamstrings, calves)</pre>
+    </div>
+    <div class="day">
+        <h3>Thursday</h3>
+        <pre>Strength: Lower Body</pre>
+        <table class="exercise-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Squats</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Deadlifts</td>
+                    <td>3</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Leg Extensions</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Hamstring Curls</td>
+                    <td>3</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Seated Calf Raises</td>
+                    <td>3</td>
+                    <td>15</td>
+                </tr>
+            </tbody>
+        </table>
+        <pre>Cool-down: 5 min stretching (legs, glutes)</pre>
+    </div>
+    <div class="day">
+        <h3>Friday</h3>
+        <pre>Rest Day</pre>
+    </div>
+</div>
+<!-- Add this at the end of the content -->
+<a href="#" class="back-to-top">Back to Top</a>
+
+</body>
+</html>
+

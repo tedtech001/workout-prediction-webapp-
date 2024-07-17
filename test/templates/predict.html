@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('serve_predict_css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Prediction Result</title>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p>Exercise recommendation Plan: <strong>{{ recommendation }}</strong></p>
+        <p>{{ exercises|safe }}</p>
+        <a href="{{ url_for('routines') }}">SEE MORE WORKOUTS?</a>
+        <a href="{{ url_for('feedback') }}">GIVE FEEDBACK</a>
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

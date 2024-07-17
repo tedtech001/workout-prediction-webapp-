@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Center | Home</title>
+    <link rel="stylesheet" href="{{ url_for('serve_home_css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#login">Log In / Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+        <div class="welcome-message-container">
+            <div class="section-content">
+                <div class="welcome-message">
+                    <h1 data-text="Welcome to Fit.T Digital Fitness Camp"><span>We</span>lcome to <span>Fit.T</span> <Digital <span>Fit</span>ness <span>Ca</span>mp</h1>
+                    <p class="text">Achieve your fitness goals with personalized exercise plans and expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    
+
+    <section id="about">
+        <div class="section-content">
+            <h2>About Us</h2>
+            <p>At Fit.T we offer a range of fitness solutions to help you reach your health and wellness goals. Our team of experienced trainers is here to guide you every step of the way. We are passionate about helping you achieve your fitness goals. Our gym offers a wide range of services designed to cater to all fitness levels and preferences. Whether you’re a beginner or an experienced athlete, our professional trainers are here to guide you every step of the way.
+                <br><br>
+                <b>Why Choose Fit.T?</b>
+                <br> <br>
+                Expert Trainers: Our trainers are not only knowledgeable but also passionate about fitness. They stay updated with the latest trends and techniques to provide you with the best guidance.<br>
+                Community Atmosphere: Fit.T is more than just a gym; it’s a community. Connect with like-minded individuals, share your fitness journey, and find motivation in our supportive environment.<br>
+                Convenient Location: We are conveniently located in Nyeri, near Dedan Kimathi University. Whether you’re a student, a working professional, or a local resident, Fit.T is easily accessible.
+                <br><br> Join us today and experience fitness like never before. Your journey to a healthier, stronger you starts here at Fit.T!
+            </p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-content">
+            <h2>Our Services</h2>
+            <ul>
+                <li class="service-item left">
+                    <i class="fas fa-dumbbell"></i> Personal Training
+                    <img src="{{ url_for('serve_image', filename='personal training.jpg') }}" alt="Personal Training">
+                </li>
+                <li class="service-item right">
+                    <i class="fas fa-calendar-alt"></i> Group Fitness Classes
+                    <img src="{{ url_for('serve_image', filename='group classes.jpg') }}" alt="Group Fitness Classes">
+                </li>
+                <li class="service-item left">
+                    <i class="fas fa-heartbeat"></i> Nutrition Counseling
+                    <img src="{{ url_for('serve_image', filename='nutrition counseling.jpg') }}" alt="Nutrition Counseling">
+                </li>
+                <li class="service-item right">
+                    <i class="fas fa-running"></i> Workout Plans
+                    <img src="{{ url_for('serve_image', filename='workout plans.jpg') }}" alt="Workout Plans">
+                </li>
+            </ul>
+        </div>
+    </section>
+<section id="login">
+    <div class="section-content">
+        <h2>Join us Today and know your workout</h2>
+    <div class="form-container">
+        <!-- Login Form -->
+        <form class="login-form" id="login-form">
+            <label for="username">Email</label>
+            <input type="text" id="login-username" name="username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="login-password" name="password" required>
+            
+            <button type="button" id="login-button">Log In</button>
+            <p>Already one of us?</p>
+        </form>
+        
+        <!-- Sign Up Form -->
+        <form class="signup-form" id="signup-form">
+            <label for="email">Email</label>
+            <input type="email" id="signup-email" name="email" required>
+            
+            <label for="username">Username</label>
+            <input type="text" id="signup-username" name="username" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="signup-password" name="password" required>
+            
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="signup-confirm-password" name="confirm-password" required class="confirm-password">
+            
+            <button type="button" id="signup-button">Sign Up</button>
+            <p>New Member?</p>
+        </form>
+    </div>
+
+    <footer>
+        
+        <p> <i class="fas fa-envelope"></i> Email: <a href="mailto:gilbertedy@gmail.com">gilbertedy@gmail.com</a><br>
+            <i class="fas fa-phone"></i> Phone: <a href="tel:+254794467196">+254 794 467 196</a>
+            <p>&copy; 2024 Fit.T. All rights reserved. </p><br>
+        </p>
+    </footer>
+
+    <!-- Firebase and Auth Script -->
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB0a9V8e2Pn2V7iHVXxQooZhvZ-ISBQTZE",
+            authDomain: "fit-twebapp.firebaseapp.com",
+            projectId: "fit-twebapp",
+            storageBucket: "fit-twebapp.appspot.com",
+            messagingSenderId: "803865654166",
+            appId: "1:803865654166:web:b5834e2a0b14c7755e63b7",
+            measurementId: "G-YEDWY797B5"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Sign Up
+        document.getElementById('signup-button').addEventListener('click', () => {
+            const email = document.getElementById('signup-email').value;
+            const username = document.getElementById('signup-username').value;
+            const password = document.getElementById('signup-password').value;
+
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    return db.collection('users').doc(user.uid).set({
+                        email: email,
+                        username: username
+                    });
+                })
+                .then(() => {
+                    alert('Sign-up successful! Please log in.');
+                    document.getElementById('login-link').click();
+                })
+                .catch((error) => {
+                    console.error(error);
+                    alert(error.message);
+                });
+        });
+
+        // Login
+        document.getElementById('login-button').addEventListener('click', () => {
+            const email = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            auth.signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    // Send user info to the backend to create a session
+                    fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ user })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            window.location.href = "/index";
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+                })
+                .catch((error) => {
+                    console.error(error);
+                    alert(error.message);
+                });
+        });
+
+        document.getElementById('signup-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.signup-form').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.getElementById('login-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.login-form').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</section>
+</body>
+</html>

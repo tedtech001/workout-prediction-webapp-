@@ -1,0 +1,70 @@
+/* Basic reset and styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #ffffff); /* Gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.back-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: #3498db; /* Background color */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: #2980b9; /* Hover background color */
+}
+
+.back-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); /* Light background for the container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #2980b9; /* Title color */
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+strong {
+    color: #e74c3c; /* Highlighted text color */
+}
+
+a {
+    display: inline-block;
+    background: #3498db; /* Button background color */
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background: #2980b9; /* Hover color */
+}

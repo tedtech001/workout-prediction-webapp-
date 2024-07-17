@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('serve_feedback_css') }}">
+</head>
+<body>
+    <h1>Workout Feedback</h1>
+    <p>Please provide feedback on the exercises you have done today.</p>
+
+    <form id="feedback-form">
+        <!-- Feedback Form Fields Here -->
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="day_of_week">Day of the Week:</label>
+        <select id="day_of_week" name="day_of_week" required>
+            <option value="">Select a day</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select><br><br>
+
+        <h2>Exercises:</h2>
+
+        <!-- Cardio Section -->
+        <div class="exercise-section">
+            <label for="cardio">Cardio:</label>
+            <select name="cardio" id="cardio">
+                <option value="">Select Cardio Exercise</option>
+                <option value="running">Running</option>
+                <option value="cycling">Cycling</option>
+                <option value="jogging">Jogging</option>
+                <option value="brisk_walking">Brisk Walking</option>
+            </select>
+            <label for="cardio_duration">Duration (minutes):</label>
+            <input type="number" id="cardio_duration" name="cardio_duration" min="1" required><br><br>
+        </div>
+
+        <!-- Upper Body Exercises -->
+        <div class="exercise-section">
+            <label for="upper_body">Upper Body Exercise:</label>
+            <select name="upper_body" id="upper_body">
+                <option value="">Select Exercise</option>
+                <option value="push_ups">Push-Ups</option>
+                <option value="pull_ups">Pull-Ups</option>
+                <option value="dumbbell_bench_press">Dumbbell Bench Press</option>
+                <option value="dumbbell_row">Dumbbell Row</option>
+            </select>
+            <label for="upper_body_sets">Sets:</label>
+            <input type="number" id="upper_body_sets" name="upper_body_sets" min="1" required>
+            <label for="upper_body_reps">Reps:</label>
+            <input type="number" id="upper_body_reps" name="upper_body_reps" min="1" required><br><br>
+        </div>
+
+        <!-- Lower Body Exercises -->
+        <div class="exercise-section">
+            <label for="lower_body">Lower Body Exercise:</label>
+            <select name="lower_body" id="lower_body">
+                <option value="">Select Exercise</option>
+                <option value="squats">Squats</option>
+                <option value="lunges">Lunges</option>
+                <option value="deadlifts">Deadlifts</option>
+                <option value="leg_press">Leg Press</option>
+            </select>
+            <label for="lower_body_sets">Sets:</label>
+            <input type="number" id="lower_body_sets" name="lower_body_sets" min="1" required>
+            <label for="lower_body_reps">Reps:</label>
+            <input type="number" id="lower_body_reps" name="lower_body_reps" min="1" required><br><br>
+        </div>
+
+        <!-- Core Exercises -->
+        <div class="exercise-section">
+            <label for="core">Core Exercise:</label>
+            <select name="core" id="core">
+                <option value="">Select Exercise</option>
+                <option value="plank">Plank</option>
+                <option value="crunches">Crunches</option>
+                <option value="leg_raises">Leg Raises</option>
+                <option value="bicycle_crunches">Bicycle Crunches</option>
+            </select>
+            <label for="core_sets">Sets:</label>
+            <input type="number" id="core_sets" name="core_sets" min="1" required>
+            <label for="core_reps">Reps:</label>
+            <input type="number" id="core_reps" name="core_reps" min="1" required><br><br>
+        </div>
+
+        <!-- Full Body Exercises -->
+        <div class="exercise-section">
+            <label for="full_body">Full Body Exercise:</label>
+            <select name="full_body" id="full_body">
+                <option value="">Select Exercise</option>
+                <option value="burpees">Burpees</option>
+                <option value="kettlebell_swings">Kettlebell Swings</option>
+                <option value="mountain_climbers">Mountain Climbers</option>
+                <option value="jump_rope">Jump Rope</option>
+            </select>
+            <label for="full_body_sets">Sets:</label>
+            <input type="number" id="full_body_sets" name="full_body_sets" min="1" required>
+            <label for="full_body_reps">Reps:</label>
+            <input type="number" id="full_body_reps" name="full_body_reps" min="1" required><br><br>
+        </div>
+
+        <!-- Comments Section -->
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit" id="submit-feedback">Submit Feedback</button>
+   
+
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyB0a9V8e2Pn2V7iHVXxQooZhvZ-ISBQTZE",
+                authDomain: "fit-twebapp.firebaseapp.com",
+                projectId: "fit-twebapp",
+                storageBucket: "fit-twebapp.appspot.com",
+                messagingSenderId: "803865654166",
+                appId: "1:803865654166:web:b5834e2a0b14c7755e63b7",
+                measurementId: "G-YEDWY797B5"
+            };
+
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+
+            // Check if the user is signed in
+            auth.onAuthStateChanged(user => {
+                if (!user) {
+                    // User is not signed in, redirect to home page
+                    alert('You must be logged in to submit feedback.');
+                    window.location.href = '/home';
+                }
+            });
+
+            // Feedback Form Submission
+            document.getElementById('feedback-form').addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Get the feedback data
+                const date = document.getElementById('date').value;
+                const dayOfWeek = document.getElementById('day_of_week').value;
+                const cardio = document.getElementById('cardio').value;
+                const cardioDuration = document.getElementById('cardio_duration').value;
+                const upperBody = document.getElementById('upper_body').value;
+                const upperBodySets = document.getElementById('upper_body_sets').value;
+                const upperBodyReps = document.getElementById('upper_body_reps').value;
+                const lowerBody = document.getElementById('lower_body').value;
+                const lowerBodySets = document.getElementById('lower_body_sets').value;
+                const lowerBodyReps = document.getElementById('lower_body_reps').value;
+                const core = document.getElementById('core').value;
+                const coreSets = document.getElementById('core_sets').value;
+                const coreReps = document.getElementById('core_reps').value;
+                const fullBody = document.getElementById('full_body').value;
+                const fullBodySets = document.getElementById('full_body_sets').value;
+                const fullBodyReps = document.getElementById('full_body_reps').value;
+                const comments = document.getElementById('comments').value;
+
+                // Get the current user
+                const user = auth.currentUser;
+                if (user) {
+                    // Store the feedback in Firestore
+                    db.collection('feedback').add({
+                        uid: user.uid,
+                        date: date,
+                        dayOfWeek: dayOfWeek,
+                        cardio: cardio,
+                        cardioDuration: cardioDuration,
+                        upperBody: upperBody,
+                        upperBodySets: upperBodySets,
+                        upperBodyReps: upperBodyReps,
+                        lowerBody: lowerBody,
+                        lowerBodySets: lowerBodySets,
+                        lowerBodyReps: lowerBodyReps,
+                        core: core,
+                        coreSets: coreSets,
+                        coreReps: coreReps,
+                        fullBody: fullBody,
+                        fullBodySets: fullBodySets,
+                        fullBodyReps: fullBodyReps,
+                        comments: comments,
+                        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                    })
+                    .then(() => {
+                        alert('Feedback submitted successfully!');
+                        document.getElementById('feedback-form').reset(); // Optional: Clear the form
+                    })
+                    .catch((error) => {
+                        console.error('Error adding feedback:', error);
+                        alert('Error submitting feedback. Please try again.');
+                    });
+                } else {
+                    alert('User is not signed in. Please log in to submit feedback.');
+                }
+            });
+        });
+    </script>
+</form>
+</body>
+</html>

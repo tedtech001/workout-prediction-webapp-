@@ -1,0 +1,395 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation Styles */
+header {
+    background: rgba(52, 152, 219, 0.8); /* 20% transparency */
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+nav ul li a:hover {
+    color: #ffbe76; /* Hover text color */
+    text-shadow: 0 0 10px rgba(255, 105, 97, 0.7); /* Glowing text effect */
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    background: #f9f9f9;
+    width: 100%;
+    max-width: 2000px;
+}
+
+/* Animation */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+/* Welcome Message Styling */
+#home{
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+.welcome-message h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 8em;
+    color: white; /* Main text color */
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+    margin: 0;
+}
+
+.welcome-message h1 span {
+    color: #39ff14; /* Neon green color for the spans */
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #39ff14, 0 0 80px #39ff14;
+}
+
+/* Specific spans for animation direction */
+.welcome-message h1 span:nth-of-type(odd) {
+    animation: fadeInLeft 2s ease-out;
+}
+
+.welcome-message h1 span:nth-of-type(even) {
+    animation: fadeInRight 2s ease-out;
+}
+
+/* Container for Welcome Message */
+.welcome-message-container {
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for subtle 3D effect */
+    background: linear-gradient(135deg, #1e1e1e, #333); /* Gradient background */
+    margin: 20px;
+    text-align: center;
+}
+
+/* Section Content */
+.section-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+
+.welcome-message p {
+    font-size: 3em;
+    color: #faeded; /* Changed text color */
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeInRight 1s ease-out; /* Slide-in from right */
+}
+
+
+/* Default background image for desktop */
+.welcome-message-container {
+    position: relative;
+    background-image: url('images/welcome bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 800px; /* Adjust height as needed */
+    width: 100%;   /* Full width of the container */
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.4); /* 60% transparency */
+}
+
+.welcome-message-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.4); /* 60% transparency */
+}
+
+/* Background image for tablets */
+@media (max-width: 1024px) {
+    .welcome-message-container {
+        background-image: url('images/welcome bg.jpg');
+    } 
+
+    .welcome-message-container::before {
+        background: rgba(0, 0, 0, 0.3); /* Lighter overlay for tablets */
+    }
+}
+
+/* Background image for mobile */
+@media (max-width: 768px) {
+    .welcome-message-container {
+        background-image: url('images/welcome bg.jpg');
+        height: 600px; /* Adjust height for mobile */
+    }
+
+    .welcome-message-container::before {
+        background: rgba(0, 0, 0, 0.2); /* Even lighter overlay for mobile */
+    }
+}
+
+/* About Us */
+#about {
+    background: rgba(44, 62, 80, 0.0); /* 50% transparency */
+    padding: 50px 20px;
+    border: none;
+    box-shadow: none;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-out;
+}
+
+#about h2 {
+    color: #010a0c; /* Light text color for contrast */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2em;
+    animation: fadeInUp 1s ease-out;
+}
+
+#about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    color: #041520; /* Light text color */
+    animation: fadeInUp 1s ease-out 0.5s;
+}
+
+/* Services Section */
+#services {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    width: 100%;
+    max-width: 1200px;
+}
+
+#services h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    animation: fadeIn 1s ease-out;
+}
+
+#services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#services .service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+#services .service-item i {
+    font-size: 2.5em;
+    color: #3498db;
+    margin-right: 20px;
+}
+
+#services .service-item img {
+    max-width: 300px; /* Increased max width for larger images */
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+#services .service-item img:hover {
+    transform: scale(1.1); /* Slightly increase the size on hover */
+}
+
+/* Responsive Design for Tablets */
+@media (max-width: 768px) {
+    #services .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #services .service-item img {
+        max-width: 250px; /* Adjust image size for tablets */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 480px) {
+    #services .service-item {
+        padding: 15px;
+    }
+
+    #services .service-item img {
+        max-width: 200px; /* Adjust image size for mobile */
+    }
+}
+
+/* Log In / Sign Up Forms */
+.form-container {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    display: flex;
+    flex-direction: row; /* Arrange forms side by side */
+    gap: 20px; /* Space between forms */
+    justify-content: center; /* Center forms horizontally */
+    margin-top: 50px; /* Add some space from the top */
+}
+#login {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+.login-form,
+.signup-form {
+    flex: 1; /* Allow forms to grow and fill available space */
+    max-width: 400px; /* Maximum width for each form */
+    width: 100%;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); /* Slightly lighter background color */
+    padding: 30px; /* Increased padding for better spacing */
+    border-radius: 12px; /* Slightly more rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    animation: fadeIn 1s ease-out;
+}
+
+h2 {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+form label {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #3498db; /* Button color */
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #2980b9; /* Button hover color */
+}
+
+form a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design for Forms */
+@media (max-width: 768px) {
+    .form-container {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        flex-direction: column; /* Stack forms on top of each other on smaller screens */
+        gap: 10px;
+    }
+}

@@ -1,0 +1,162 @@
+/* routines.css */
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.back-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: #3498db; /* Background color */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: #2980b9; /* Hover background color */
+}
+
+.back-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+h1 {
+    color: #4A90E2;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #d35400;
+    border-bottom: 2px solid #d35400;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 2em;
+}
+
+h3 {
+    color: #27ae60;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.day {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    color: #2c3e50;
+}
+
+/* Gradient background for days */
+.bmi-case .day:nth-child(odd) {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.bmi-case .day:nth-child(even) {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+
+.bmi-case .day:nth-child(even) {
+    background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+/* Table styling for exercises */
+.exercise-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.exercise-table th, .exercise-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.exercise-table thead {
+    background: #4A90E2;
+    color: #fff;
+}
+
+.exercise-table tbody tr:nth-child(odd) {
+    background: #f2f2f2;
+}
+
+.exercise-table tbody tr:hover {
+    background: #ddd;
+}
+/* routines.css */
+
+/* Existing styles... */
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3498db; /* Button color */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-to-top:hover {
+    background: #2980b9; /* Hover color */
+}
+
+/* routines.css */
+
+/* Basic reset and styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #ffffff); /* Gradient background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Header styles */
+
+header {
+    background: #79c2e4; /* Header background color */
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+
